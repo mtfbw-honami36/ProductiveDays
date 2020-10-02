@@ -1,4 +1,4 @@
 <%= month_calendar do |date| %>
   <%= date.day %>
 <% end %>
-<p>作成</p>
+<%= link_to "作成", new_schedule_path, class: 'create_btn'%>
