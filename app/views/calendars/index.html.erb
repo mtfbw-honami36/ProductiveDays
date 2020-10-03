@@ -1,4 +1,10 @@
-<%= month_calendar do |date| %>
+<%= month_calendar events: @schedule do |date, schedule| %>
   <%= date.day %>
+
+  <% schedule.each do |schedule| %>
+    <div>
+      <%= schedule.name %>
+    </div>
+  <% end %>
 <% end %>
 <%= link_to "作成", new_schedule_path, class: 'create_btn'%>
