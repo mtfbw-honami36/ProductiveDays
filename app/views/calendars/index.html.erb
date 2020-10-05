@@ -3,7 +3,7 @@
 
   <% schedule.each do |schedule| %>
     <div>
-      <%= schedule.name %>
+      <%= link_to schedule.name, schedule_path(schedule.id)%>
     </div>
   <% end %>
 <% end %>
