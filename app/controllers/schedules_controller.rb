@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:show, :edit, :update]
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   
   def show
   end
@@ -28,6 +28,14 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def destroy
+    if @schedule.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+  
   private
 
   def schedule_params
