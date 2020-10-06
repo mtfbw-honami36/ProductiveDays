@@ -15,6 +15,11 @@
         <%= f.datetime_select :end_time, class:"time" %>
       </div>
       <div class="create">
+        <label class="control-label" for="">テーマカラー</label>
+        <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"color-select"}) %>
+      </div>
+      <div class="create">
+        <label class="control-label" for="">カウントダウン</label>
         <%= f.collection_select(:countdown_id, Countdown.all, :id, :name, {}, {class:"countdown-select"}) %>
       </div>
       <div class="create">
