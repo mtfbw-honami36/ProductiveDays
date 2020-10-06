@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.wrapper{
+  display: flex;
+}
+.side_bar{
+  width: 200px;
+  height: 100vh;
+}
+.countdown{
+  background-color: pink;
+  height: 30vh;
+}
+.todo{
+  background-color: rosybrown;
+  height: 70vh;
+}
+.main{
+  width: calc(100% - 200px);
+  padding: 40px;
+}
+
 .simple-calendar {
   .calendar-heading{
     text-align: center;

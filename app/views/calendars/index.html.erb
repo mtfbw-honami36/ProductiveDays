@@ -1,32 +1,43 @@
-<%= month_calendar events: @schedule do |date, schedule| %>
-  <%= date.day %>
+<div class="wrapper">
+  <div class="side_bar">
+    <div class="countdown">
+    </div>
+    <div class="todo">
+    </div>
+  </div>
 
-  <% schedule.each do |schedule| %>
-    <% if schedule.color_id == 2 %>
-      <div>
-        <%= link_to schedule.name, schedule_path(schedule.id), style: "color: deepskyblue"%>
-      </div>
-    <% elsif schedule.color_id == 3 %>
-      <div>
-        <%= link_to schedule.name, schedule_path(schedule.id), style: "color: mediumseagreen"%>
-      </div>
-    <% elsif schedule.color_id == 4 %>
-      <div>
-        <%= link_to schedule.name, schedule_path(schedule.id), style: "color: saddlebrown"%>
-      </div>
-    <% elsif schedule.color_id == 5 %>
-      <div>
-        <%= link_to schedule.name, schedule_path(schedule.id), style: "color: darkorange"%>
-      </div>
-    <% elsif schedule.color_id == 6 %>
-      <div>
-        <%= link_to schedule.name, schedule_path(schedule.id), style: "color: blueviolet"%>
-      </div>
-    <% else schedule.color_id == 7 %>
-      <div>
-        <%= link_to schedule.name, schedule_path(schedule.id), style: "color: violet"%>
-      </div>
+  <div class="main">
+    <%= month_calendar events: @schedule do |date, schedule| %>
+      <%= date.day %>
+
+      <% schedule.each do |schedule| %>
+        <% if schedule.color_id == 2 %>
+          <div>
+            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: deepskyblue"%>
+          </div>
+        <% elsif schedule.color_id == 3 %>
+          <div>
+            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: mediumseagreen"%>
+          </div>
+        <% elsif schedule.color_id == 4 %>
+          <div>
+            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: saddlebrown"%>
+          </div>
+        <% elsif schedule.color_id == 5 %>
+          <div>
+            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: darkorange"%>
+          </div>
+        <% elsif schedule.color_id == 6 %>
+          <div>
+            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: blueviolet"%>
+          </div>
+        <% else schedule.color_id == 7 %>
+          <div>
+            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: violet"%>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
-<% end %>
-<%= link_to "作成", new_schedule_path, class: 'create_btn'%>
+    <%= link_to "作成", new_schedule_path, class: 'create_btn'%>
+  </div>
+</div>
