@@ -1,0 +1,12 @@
+<p>
+  <strong><%= @schedule.start_time.strftime("%Y-%m-%d %H:%M") %> 〜 <%= @schedule.end_time.strftime("%Y-%m-%d %H:%M") %></strong>
+</p>
+
+<p>
+  <strong><%= @schedule.name %></strong>
+</p>
+
+
+<%= link_to "編集", edit_schedule_path %>
+<%= link_to "削除", schedule_path, method: :delete %>
+<%= link_to "戻る", "/"%>

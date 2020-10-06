@@ -1,0 +1,30 @@
+<h1>予定作成</h1>
+<div class="schedule">
+  <%= form_with model: @schedule, url:schedule_path, local: true do |f| %>
+    <div class="schedule-box">
+      <div class="create">
+        <label class="control-label" for="">予定</label>
+        <%= f.text_field :name, class:"event_name" %>
+      </div>
+      <div class="create">
+        <label class="control-label" for="">Start</label>
+        <%= f.datetime_select :start_time, class:"time" %>
+      </div>
+      <div class="create">
+        <label class="control-label" for="">End</label>
+        <%= f.datetime_select :end_time, class:"time" %>
+      </div>
+      <div class="create">
+        <label class="control-label" for="">テーマカラー</label>
+        <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"color-select"}) %>
+      </div>
+      <div class="create">
+        <label class="control-label" for="">カウントダウン</label>
+        <%= f.collection_select(:countdown_id, Countdown.all, :id, :name, {}, {class:"countdown-select"}) %>
+      </div>
+      <div class="create">
+        <%= f.submit "OK" ,class:"btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
