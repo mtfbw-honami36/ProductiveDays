@@ -6,12 +6,13 @@
   display: flex;
 }
 .side_bar{
+  background-color: pink;
   width: 200px;
   height: 100vh;
 }
 .countdown{
-  background-color: pink;
   height: 30vh;
+  margin: 5px;
 }
 .todo{
   background-color: rosybrown;
