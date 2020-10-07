@@ -1,7 +1,18 @@
 <div class="wrapper">
   <div class="side_bar">
     <div class="countdown">
+      <% @schedule.each do |schedule|%>
+        <% if schedule.countdown_id == 3 %>
+          <% today = Date.today.jd %>
+          <% limit = schedule.start_time.to_date.jd %>
+          <% remain = limit - today %>
+          <div>
+          <%= "#{schedule.name}まであと#{remain}日" %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+    
     <div class="todo">
     </div>
   </div>
