@@ -14,7 +14,17 @@
     </div>
     
     <div class="todo">
-    
+      <h2>ToDo リスト</h2>
+      <% @todos.each do |todo| %>
+        <p>
+        <input type="checkbox"><%= todo.name %>
+        <%= link_to image_tag("trash.png", :size =>'15x15'),todo_path(todo.id), method: :delete %>
+        </p>
+      <% end %>
+      <%= form_with model: @todo, local: true  do |f| %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+      <% end %>
     </div>
   </div>
 
