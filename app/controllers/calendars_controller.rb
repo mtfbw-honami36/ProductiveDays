@@ -1,4 +1,8 @@
 class CalendarsController < ApplicationController
+  
+  def top
+  end
+  
   def index
     @schedule = Schedule.all
     @todos = Todo.all
