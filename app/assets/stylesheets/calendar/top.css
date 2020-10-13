@@ -31,5 +31,13 @@ p{
   background-color: #68a9cf;
   padding: 10px;
   border-radius: 10px;
-  margin-left:50%;
+}
+
+.sign-in{
+  color: #fafdff;
+  text-decoration: none;
+  background-color: #68a9cf;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 40px;
 }
