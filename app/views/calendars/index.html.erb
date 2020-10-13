@@ -1,33 +1,4 @@
 <div class="wrapper">
-  <div class="side_bar">
-    <div class="countdown">
-      <% @schedule.each do |schedule|%>
-        <% if schedule.countdown_id == 3 %>
-          <% today = Date.today.jd %>
-          <% limit = schedule.start_time.to_date.jd %>
-          <% remain = limit - today %>
-          <div>
-          <%= "・#{schedule.name}まであと#{remain}日" %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    
-    <div class="todo">
-      <h2>ToDo リスト</h2>
-      <% @todos.each do |todo| %>
-        <p>
-        <input type="checkbox"><%= todo.name %>
-        <%= link_to image_tag("trash.png", :size =>'15x15'),todo_path(todo.id), method: :delete %>
-        </p>
-      <% end %>
-      <%= form_with model: @todo, local: true  do |f| %>
-        <%= f.text_field :name %>
-        <%= f.submit %>
-      <% end %>
-    </div>
-  </div>
-
   <div class="main">
     <%= month_calendar events: @schedule do |date, schedule| %>
       <%= date.day %>
@@ -60,7 +31,42 @@
         <% end %>
       <% end %>
     <% end %>
-    <%= link_to "作成", new_schedule_path, class: 'create_btn'%>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <%= link_to "予定作成", new_schedule_path, class: 'create_btn'%>
   </div>
+
+  <div class="side_bar">
+    <div class="countdown">
+      <h2>Countdown</h2>
+      <% @schedule.each do |schedule|%>
+        <% if schedule.countdown_id == 3 %>
+          <% today = Date.today.jd %>
+          <% limit = schedule.start_time.to_date.jd %>
+          <% remain = limit - today %>
+          <div class="counts">
+          <%= "・#{schedule.name}まであと#{remain}日" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="todo">
+      <h2>ToDo リスト</h2>
+      <% @todos.each do |todo| %>
+        <p>
+        <input type="checkbox"><%= todo.name %>
+        <%= link_to image_tag("trash.png", :size =>'15x15'),todo_path(todo.id), method: :delete %>
+        </p>
+      <% end %>
+      <%= form_with model: @todo, local: true  do |f| %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+
+    <div class="account">
+      <%= link_to "アカウントを削除する", user_registration_path, method: :delete, class: "delete"%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+    </div>
+  </div>
+
 </div>
