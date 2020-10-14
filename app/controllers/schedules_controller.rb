@@ -10,10 +10,11 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
-    if @schedule.save
+    if @schedule.valid?
+      @schedule.save
       redirect_to calendars_path
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -24,7 +25,7 @@ class SchedulesController < ApplicationController
     if @schedule.update(schedule_params)
       redirect_to schedule_path
     else
-      render :edit
+      render 'edit'
     end
   end
 
@@ -32,7 +33,7 @@ class SchedulesController < ApplicationController
     if @schedule.destroy
       redirect_to root_path
     else
-      render :show
+      render 'show'
     end
   end
   

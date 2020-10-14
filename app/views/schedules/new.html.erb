@@ -1,6 +1,9 @@
-<h1>予定作成</h1>
+<div class='schedule-form'>予定作成</div>
 <div class="schedule">
   <%= form_with model: @schedule, url:schedules_path, local: true do |f| %>
+    <div class="error-messages">
+    <%= render 'layouts/error_messages', model: f.object %>
+    </div>
     <div class="schedule-box">
       <div class="create">
         <label class="control-label" for="">予定</label>
@@ -29,5 +32,5 @@
   <% end %>
 </div>
 
-<%= link_to "戻る", root_path, class: 'back_btn' %>
+<%= link_to "戻る", calendars_path, class: 'back_btn' %>
 
