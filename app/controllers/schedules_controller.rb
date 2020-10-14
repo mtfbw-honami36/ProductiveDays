@@ -1,6 +1,5 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
-  
   def show
   end
 
@@ -31,7 +30,7 @@ class SchedulesController < ApplicationController
 
   def destroy
     if @schedule.destroy
-      redirect_to root_path
+      redirect_to calendars_path
     else
       render 'show'
     end
