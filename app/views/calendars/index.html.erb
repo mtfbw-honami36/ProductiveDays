@@ -42,9 +42,15 @@
           <% today = Date.today.jd %>
           <% limit = schedule.start_time.to_date.jd %>
           <% remain = limit - today %>
-          <div class="counts">
-          <%= "・#{schedule.name}まであと#{remain}日" %>
-          </div>
+          <% if remain >= 4 %>
+            <div class="counts">
+            <%= "#{schedule.name}まであと#{remain}日" %>
+            </div>
+          <% elsif remain >= 0 && remain <= 3 %>
+            <div class="counts_color">
+            <%= "#{schedule.name}まであと#{remain}日" %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
