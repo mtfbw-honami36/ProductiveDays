@@ -1,0 +1,43 @@
+.cover{
+  background-image: url("../coffee.jpg");
+  background-color: white;
+  opacity: 80%;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center
+}
+
+
+.title{
+  font-family: cursive;
+  color: #fafdff;
+  margin-left: 15%;
+}
+
+
+h1{
+  font-size: 90px;
+}
+
+p{
+  font-size: 20px;
+}
+
+.sign-up{
+  color: #fafdff;
+  text-decoration: none;
+  background-color: #68a9cf;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.sign-in{
+  color: #fafdff;
+  text-decoration: none;
+  background-color: #68a9cf;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 40px;
+}

@@ -1,18 +1,54 @@
 <div class="wrapper">
+  <div class="main">
+    <%= month_calendar events: @schedule do |date, schedule| %>
+      <%= date.day %>
+      
+        <% schedule.each do |schedule| %>
+          <% if schedule.color_id == 2 %>
+            <div>
+              <%= link_to schedule.name, schedule_path(schedule.id), style: "color: deepskyblue"%>
+            </div>
+          <% elsif schedule.color_id == 3 %>
+            <div>
+              <%= link_to schedule.name, schedule_path(schedule.id), style: "color: mediumseagreen"%>
+            </div>
+          <% elsif schedule.color_id == 4 %>
+            <div>
+              <%= link_to schedule.name, schedule_path(schedule.id), style: "color: saddlebrown"%>
+            </div>
+          <% elsif schedule.color_id == 5 %>
+            <div>
+              <%= link_to schedule.name, schedule_path(schedule.id), style: "color: darkorange"%>
+            </div>
+          <% elsif schedule.color_id == 6 %>
+            <div>
+              <%= link_to schedule.name, schedule_path(schedule.id), style: "color: blueviolet"%>
+            </div>
+          <% else schedule.color_id == 7 %>
+            <div>
+              <%= link_to schedule.name, schedule_path(schedule.id), style: "color: violet"%>
+            </div>
+          <% end %>
+        <% end %>
+    <% end %>
+    <%= link_to "予定作成", new_schedule_path, class: 'create_btn'%>
+  </div>
+
   <div class="side_bar">
     <div class="countdown">
+      <h2>Countdown</h2>
       <% @schedule.each do |schedule|%>
         <% if schedule.countdown_id == 3 %>
           <% today = Date.today.jd %>
           <% limit = schedule.start_time.to_date.jd %>
           <% remain = limit - today %>
-          <div>
+          <div class="counts">
           <%= "・#{schedule.name}まであと#{remain}日" %>
           </div>
         <% end %>
       <% end %>
     </div>
-    
+      
     <div class="todo">
       <h2>ToDo リスト</h2>
       <% @todos.each do |todo| %>
@@ -26,40 +62,10 @@
         <%= f.submit %>
       <% end %>
     </div>
-  </div>
 
-  <div class="main">
-    <%= month_calendar events: @schedule do |date, schedule| %>
-      <%= date.day %>
-
-      <% schedule.each do |schedule| %>
-        <% if schedule.color_id == 2 %>
-          <div>
-            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: deepskyblue"%>
-          </div>
-        <% elsif schedule.color_id == 3 %>
-          <div>
-            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: mediumseagreen"%>
-          </div>
-        <% elsif schedule.color_id == 4 %>
-          <div>
-            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: saddlebrown"%>
-          </div>
-        <% elsif schedule.color_id == 5 %>
-          <div>
-            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: darkorange"%>
-          </div>
-        <% elsif schedule.color_id == 6 %>
-          <div>
-            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: blueviolet"%>
-          </div>
-        <% else schedule.color_id == 7 %>
-          <div>
-            <%= link_to schedule.name, schedule_path(schedule.id), style: "color: violet"%>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-    <%= link_to "作成", new_schedule_path, class: 'create_btn'%>
+    <div class="account">
+      <%= link_to "アカウントを削除する", user_registration_path, method: :delete, class: "delete"%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+    </div>
   </div>
 </div>

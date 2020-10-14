@@ -39,7 +39,7 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:name, :start_time, :end_time, :countdown_id, :color_id)
+    params.require(:schedule).permit(:name, :start_time, :end_time, :countdown_id, :color_id).merge(user_id: current_user.id)
   end
 
   def set_schedule

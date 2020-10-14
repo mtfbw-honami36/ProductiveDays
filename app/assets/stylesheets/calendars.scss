@@ -5,19 +5,7 @@
 .wrapper{
   display: flex;
 }
-.side_bar{
-  background-color: pink;
-  width: 200px;
-  height: 100vh;
-}
-.countdown{
-  height: 30vh;
-  margin: 5px;
-}
-.todo{
-  background-color: rosybrown;
-  height: 70vh;
-}
+
 .main{
   width: calc(100% - 200px);
   padding: 40px;
@@ -27,6 +15,16 @@
   .calendar-heading{
     text-align: center;
     font-size: 30px;
+  }
+  
+  .prev{
+    text-decoration: none;
+    color: #68a9cf;
+  }
+
+  .next{
+    text-decoration: none;
+    color: #68a9cf;
   }
 
   .day_name{
@@ -58,4 +56,47 @@
 
 .create_btn{
   text-decoration: none;
+  background-color: #68a9cf;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+h2{
+  margin-left: 5px;
+}
+
+.side_bar{
+  background-color: #68a9cf;
+  width: 200px;
+  height: 100vh;
+}
+
+.countdown{
+  height: 30vh;
+  margin: 5px;
+}
+
+.todo{
+  color: white;
+  background-color: #baa896;
+  height: 60vh;
+}
+
+p{
+  font-size:15px;
+}
+
+.account{
+  height: 10vh;
+  background-color: #e6ccb5;
+}
+
+.delete{
+  color: #867666;
+}
+
+.logout{
+  color: #867666;
 }
