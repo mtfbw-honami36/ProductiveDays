@@ -1,7 +1,14 @@
-.schedule{
-  background-color: antiquewhite;
+.schedule-form{
+  font-size: 40px;
 }
 
+.error-messages{
+  color: red;
+}
+
+.schedule-box{
+  background-color: antiquewhite;
+}
 .create{
   padding: 5px;
 }
