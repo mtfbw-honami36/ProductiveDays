@@ -1,24 +1,99 @@
-# README
+ProductiveDays
+--------------
+https://user-images.githubusercontent.com/69249911/96011425-da3c0700-0e7d-11eb-824c-8350c5850f2b.jpg
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+アプリケーション概要
+-----------------
+スケジュール管理アプリです。マンスリーカレンダーに予定を追加できるだけでなく、予定日までのカウントダウンもできます。予定はカテゴリごとに色分けして管理することができるので、仕事もプライベートもこのアプリ一つで予定管理できます。Todoリストを使ってやるべきことを明確にできます。
 
-Things you may want to cover:
+URL
+---
+https://productivedays.herokuapp.com/
 
-* Ruby version
+Basic認証
+--------
+ID: pdfoapp  
+Pass: check
 
-* System dependencies
+利用方法
+-------
+### サインアップ  
+トップ画面で「いますぐ無料で始める」からサインアップしてください。
 
-* Configuration
+### スケジュール作成  
+カレンダー左下の「予定作成」から作成画面に入れます。予定名、開始時間、終了時間、テーマカラー、カウントダウンの有無を入力していきます。テーマカラーとカウントダウンの有無は自動でカレンダー画面に反映されます。
 
-* Database creation
+### スケジュール確認  
+スケジュール名をクリックすると、その予定の詳細を確認することができます。また、詳細画面の「編集」ボタンより予定の編集、「削除」ボタンより予定の削除ができます。
 
-* Database initialization
+### Todoリスト  
+カレンダー画面右下のTodoリストにあるフォームにTodo名を入力し、「登録する」ボタンをクリックするとリストにTodoが追加されます。
 
-* How to run the test suite
+目指した課題解決
+-------------
+### ペルソナ  
+年齢: 10代後半から20代  
+職業: 高校生、大学生
 
-* Services (job queues, cache servers, search engines, etc.)
+### 解決したかった課題  
+試験やレポート提出の期限を意識しながら計画的に勉強を進めたい  
+バイトや友達との予定も一つのカレンダーで管理したい
 
-* Deployment instructions
+### 洗い出した要件  
+##### ユーザー管理機能  
+ユーザーを新しく登録できる  
+ユーザー登録をしている場合ログインすることができる  
+ログアウトできる  
+アカウントを削除することができる
 
-* ...
+##### 予定作成機能  
+予定を作成することができる  
+予定はテーマカラーを決めることができる  
+作成した予定はカレンダーに表示される
+
+##### カウントダウン機能  
+予定までの日数を自動で計算する  
+カレンダー表示画面に「〇〇まであと何日」というカウントダウンが表示されている  
+予定日までの日数が３日以内になると文字の色が変わる  
+過去の予定は表示されない
+
+##### Todo作成機能  
+Todoを作成できる  
+作成したTodoは一覧で確認できる  
+Todoを削除できる
+
+実装した機能についてのGIFと説明
+--------------------------
++ ユーザー登録  
+https://github.com/mtfbw-honami36/ProductiveDays/files/5382055/signup.mp4.zip  
+トップ画面から登録できます。
+登録が終わると、カレンダー画面に遷移します。
+
++ 予定作成  
+https://github.com/mtfbw-honami36/ProductiveDays/files/5382054/schedule.mp4.zip  
+「予定作成」画面から予定を作成できます。作成した予定は、テーマカラーとカウントダウンの有無の選択に基づいてカレンダー画面に表示されます。
+
++ Todo  
+https://github.com/mtfbw-honami36/ProductiveDays/files/5382053/todo.mp4.zip  
+Todoリストの作成フォームに新しいTodoを入力すると、フォーム上部のTodo一覧に表示されます。ゴミ箱マークを押すと削除できます。
+
+データベース設計
+-------------
+ER図  
+https://user-images.githubusercontent.com/69249911/96069435-308a6380-0ed9-11eb-9377-ff0640112d6c.png
+
+ローカルでの動作方法
+### バージョン  
++ Ruby: 2.6.5  
++ Rails:6.0.0  
+
+### インストール  
+1. % cd [ダウンロードしたいディレクトリ名]  
+2. % git clone https://github.com/mtfbw-honami36/ProductiveDays.git  
+3. % cd ProductiveDays  
+4. % bundle install  
+5. % yarn install  
+6. % rails db:create  
+7. % rails db:migrate  
+8. % rails s  
+9. http://localhost:3000/ にアクセス。
