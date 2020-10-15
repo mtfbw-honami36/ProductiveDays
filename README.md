@@ -1,6 +1,6 @@
 ProductiveDays
 --------------
-https://user-images.githubusercontent.com/69249911/96011425-da3c0700-0e7d-11eb-824c-8350c5850f2b.jpg
+![productivedays_top](https://user-images.githubusercontent.com/69249911/96073510-8e22ae00-0ee1-11eb-82c3-b9be0ae63bc4.jpg)  
 
 アプリケーション概要
 -----------------
@@ -65,24 +65,25 @@ Todoを削除できる
 実装した機能についてのGIFと説明
 --------------------------
 + ユーザー登録  
-https://github.com/mtfbw-honami36/ProductiveDays/files/5382055/signup.mp4.zip  
+![signup](https://user-images.githubusercontent.com/69249911/96073444-6d5a5880-0ee1-11eb-9a9a-ee29ecbd7a5c.gif)  
 トップ画面から登録できます。
 登録が終わると、カレンダー画面に遷移します。
 
 + 予定作成  
-https://github.com/mtfbw-honami36/ProductiveDays/files/5382054/schedule.mp4.zip  
+![schedule](https://user-images.githubusercontent.com/69249911/96073430-67647780-0ee1-11eb-8ce7-4b2b53f6c107.gif)  
 「予定作成」画面から予定を作成できます。作成した予定は、テーマカラーとカウントダウンの有無の選択に基づいてカレンダー画面に表示されます。
 
 + Todo  
-https://github.com/mtfbw-honami36/ProductiveDays/files/5382053/todo.mp4.zip  
+![todo](https://user-images.githubusercontent.com/69249911/96073451-6fbcb280-0ee1-11eb-9330-fb568366168c.gif)  
 Todoリストの作成フォームに新しいTodoを入力すると、フォーム上部のTodo一覧に表示されます。ゴミ箱マークを押すと削除できます。
 
 データベース設計
 -------------
 ER図  
-https://user-images.githubusercontent.com/69249911/96069435-308a6380-0ed9-11eb-9377-ff0640112d6c.png
+<img width="519" alt="ER" src="https://user-images.githubusercontent.com/69249911/96073459-72b7a300-0ee1-11eb-957f-7b83ec4af547.png">
 
 ローカルでの動作方法
+----------------
 ### バージョン  
 + Ruby: 2.6.5  
 + Rails:6.0.0  
